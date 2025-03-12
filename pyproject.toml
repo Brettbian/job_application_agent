@@ -1,7 +1,35 @@
 [project]
-name = "job-application-agent"
+name = "ai-news-summarizer"
 version = "0.1.0"
-description = "Add your description here"
+description = "An automated system to gather and humorously summarize AI news"
 readme = "README.md"
 requires-python = ">=3.9"
-dependencies = []
+dependencies = [
+    "requests>=2.31.0",
+    "newspaper3k>=0.2.8",
+    "pandas>=2.0.0",
+    "transformers>=4.35.0",
+    "torch>=2.0.0",
+    "openai>=1.0.0",
+    "python-dotenv>=1.0.0",
+    "beautifulsoup4>=4.12.0",
+    "pytest>=7.4.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black>=23.3.0",
+    "isort>=5.12.0",
+    "flake8>=6.0.0",
+    "pytest>=7.4.0",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"
